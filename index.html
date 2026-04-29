@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>نظام إدارة المخزون</title>
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+<body>
+
+<h1>📦 نظام إدارة المخزون</h1>
+
+<button class="dark-btn" onclick="toggleDark()">🌙</button>
+
+<!-- إضافة منتج -->
+<section class="card">
+  <h2>➕ إضافة صنف</h2>
+  <input id="name" placeholder="اسم الصنف">
+  <input id="category" placeholder="الفئة">
+  <input id="price" type="number" placeholder="السعر">
+  <input id="quantity" type="number" placeholder="الكمية">
+  <button onclick="addProduct()">إضافة</button>
+</section>
+
+<table>
+  <thead>
+    <tr>
+      <th>الصنف</th>
+      <th>الفئة</th>
+      <th>السعر</th>
+      <th>المتبقي</th>
+      <th>المباع اليوم</th>
+      <th>إجراءات</th>
+    </tr>
+  </thead>
+  <tbody id="products"></tbody>
+</table>
+
+
+
+<!-- كاشير سريع -->
+<section class="card">
+  <h2>🧾 كاشير سريع</h2>
+
+  <select id="cashierProduct"></select>
+  <input id="cashierQty" type="number" placeholder="الكمية">
+  <button onclick="addToCart()">➕ إضافة للسلة</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>الصنف</th>
+        <th>الكمية</th>
+        <th>السعر</th>
+        <th>الإجمالي</th>
+        <th>❌</th>
+      </tr>
+    </thead>
+    <tbody id="cartTable"></tbody>
+  </table>
+
+  <h3 id="cartTotal">الإجمالي: 0 ج</h3>
+  <button onclick="checkout()">✅ إتمام البيع</button>
+</section>
+
+<!-- Dashboard -->
+<section class="stats">
+  <div class="stat">📦 الأصناف <span id="statProducts">0</span></div>
+  <div class="stat">📊 الكمية <span id="statQty">0</span></div>
+  <div class="stat">🛒 المباع <span id="statSold">0</span></div>
+  <div class="stat">💰 الإيراد <span id="statMoney">0</span></div>
+</section>
+
+<input id="search" placeholder="🔍 بحث..." onkeyup="renderProducts()">
+
+<button onclick="exportPDF()">📥 تصدير PDF</button>
+
+<!-- الجرد اليومي -->
+<section class="card report">
+  <h2>📊 الجرد اليومي التفصيلي</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>الصنف</th>
+        <th>الكمية المباعة</th>
+        <th>الإجمالي</th>
+      </tr>
+    </thead>
+    <tbody id="dailyTable"></tbody>
+  </table>
+
+  <p id="sold">إجمالي المباع: 0</p>
+  <p id="money">إجمالي الإيراد: 0 ج</p>
+  <section class="card">
+  <h2>🔄 المرتجعات</h2>
+
+  <select id="returnProduct"></select>
+  <input id="returnQty" type="number" placeholder="الكمية المراد إرجاعها">
+  <button onclick="processReturn()">✅ إرجاع</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>الصنف</th>
+        <th>الكمية المرجعة</th>
+        <th>تاريخ الإرجاع</th>
+      </tr>
+    </thead>
+    <tbody id="returnTable"></tbody>
+  </table>
+</section>
+
+
+  <button onclick="resetDaily()">إنهاء اليوم</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

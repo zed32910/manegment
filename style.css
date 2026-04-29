@@ -1,0 +1,223 @@
+body {
+  font-family: Tahoma;
+  background: #f4f6f8;
+  padding: 20px;
+  direction: rtl;
+}
+
+h1 { text-align: center; }
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+input, select {
+  padding: 8px;
+  margin: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover { background: #0056b3; }
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.stat {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stat span {
+  display: block;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.report { background: #e9f7ef; }
+
+.dark-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark .card,
+body.dark table,
+body.dark .stat {
+  background: #1e1e1e;
+  color: white;
+}
+body {
+  font-family: Tahoma;
+  background: #f4f6f8;
+  padding: 20px;
+  direction: rtl;
+}
+
+h1 { text-align: center; }
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+input, select {
+  padding: 8px;
+  margin: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover { background: #0056b3; }
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+/* 🔴 تحذير نفاد */
+.stock-danger {
+  background: #be111f;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* 🟡 تنبيه */
+.stock-warning {
+  background: #eeff00;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.stat {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stat span {
+  display: block;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.report { background: #e9f7ef; }
+
+.dark-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark .card,
+body.dark table,
+body.dark .stat {
+  background: #1e1e1e;
+  color: white;
+}
+
+
+/* Toast Container */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Toast Box */
+.toast {
+  background: #dc3545;
+  color: white;
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
